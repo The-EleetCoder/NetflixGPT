@@ -1,0 +1,4 @@
+NetflixGPT Docs
+
+npx create-react-app ./
+configured tailwind
