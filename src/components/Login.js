@@ -30,7 +30,7 @@ const Login = () => {
 
         {/* Remember me */}
         <div className="flex items-center gap-1 text-sm h-[1rem]">
-          <input type="checkbox" className="" />
+          <input type="checkbox" className="cursor-pointer" />
           <label className="mb-1">Remember me</label>
         </div>
 
@@ -38,11 +38,11 @@ const Login = () => {
         <div className="mt-10">
           <div className="">
             New to Netflix?{" "}
-            <span className="font-semibold text-white">Sign up now.</span>
+            <span className="font-semibold text-white cursor-pointer">Sign up now.</span>
           </div>
           <div className="text-[13px] mt-4">
             This page is protected by Google reCAPTCHA to ensure you're not a
-            bot. <span className=" text-blue-500">Learn more.</span>
+            bot. <span className=" text-blue-500 cursor-pointer">Learn more.</span>
           </div>
         </div>
       </form>
