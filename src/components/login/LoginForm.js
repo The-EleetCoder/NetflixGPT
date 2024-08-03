@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import FormikField from "./FormikField";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../utils/firebase";
 
 const LoginForm = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -21,7 +23,23 @@ const LoginForm = () => {
   });
 
   const handleSubmit = (values) => {
-    console.log(values);
+    if (isLoginForm) {
+      // sign in logic
+      console.log("logged in!");
+    } else {
+      // sign up logic
+      createUserWithEmailAndPassword(auth, values.email, values.password)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
+    }
   };
 
   return (
