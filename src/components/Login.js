@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
 
 const Login = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
 
+  const username = useRef(null);
+  const email = useRef(null);
+  const password = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(username?.current?.value);
+    console.log(email?.current?.value);
+    console.log(password?.current?.value);
   };
 
   const handleClick = () => {
@@ -31,17 +38,20 @@ const Login = () => {
           {/* input */}
           {!isLoginForm && (
             <input
+              ref={username}
               type="text"
               placeholder="Username"
               className="p-2 px-4 my-2 w-full bg-[#121212] border-[#4c4c4c] border-[1px] focus:border-[#D9232E] focus:outline-none rounded-sm"
             />
           )}
           <input
+            ref={email}
             type="text"
             placeholder="Email"
             className="p-2 px-4 my-2 w-full bg-[#121212] border-[#4c4c4c] border-[1px] focus:border-[#D9232E] focus:outline-none rounded-sm"
           />
           <input
+            ref={password}
             type="password"
             placeholder="Password"
             className="p-2 px-4 my-2 w-full bg-[#121212] border-[#4c4c4c] border-[1px] focus:border-[#D9232E] focus:outline-none rounded-sm"
