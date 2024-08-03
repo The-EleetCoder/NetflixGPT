@@ -11,3 +11,11 @@ Read more on this link : https://reactrouter.com/en/main/routers/picking-a-route
 👉Login/Signup form
 Used Formik to implement forms and YUP for input schema validation
 
+👉Firebase
+Used Firebase for database and for hosting.
+Also used it for authentication
+Steps for deployment
+-> npm install -g firebase-tools
+-> firebase login
+-> firebase init (then select hosting)
+-> firebase deploy
