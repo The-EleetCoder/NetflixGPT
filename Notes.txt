@@ -9,5 +9,5 @@ we are using createBrowserRouter for routing as its the latest one as of now and
 Read more on this link : https://reactrouter.com/en/main/routers/picking-a-router
 
 👉Login/Signup form
-Used useRef hook to get the values from the input boxes.
+Used Formik to implement forms and YUP for input schema validation
 
